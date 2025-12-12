@@ -206,7 +206,8 @@ function renderSchedule() {
 
         // Topics List HTML
         const topicsList = document.createElement('div');
-        topicsList.className = 'flex-1 p-6 overflow-y-auto max-h-[400px]';
+        // Added 'custom-scrollbar' class here
+        topicsList.className = 'flex-1 p-6 overflow-y-auto max-h-[400px] custom-scrollbar'; 
         topicsList.innerHTML = `<h4 class="text-xs font-semibold text-gray-400 dark:text-gray-500 uppercase tracking-wider mb-3">Topics to Study</h4>`;
         
         const ul = document.createElement('ul');
