@@ -1,7 +1,7 @@
 /* Global Font */
 body {
     font-family: 'Inter', sans-serif;
-    background-color: #f3f4f6;
+    /* Background color is handled by Tailwind classes in index.html now */
 }
 
 /* Hide Scrollbar Utilities */
@@ -14,15 +14,14 @@ body {
     scrollbar-width: none;
 }
 
-/* Glassmorphism Effect (Optional usage) */
-.glass {
-    background: rgba(255, 255, 255, 0.85);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border: 1px solid rgba(255, 255, 255, 0.3);
+/* Smooth color transition for dark mode toggle */
+body, div, span, button {
+    transition-property: background-color, border-color, color;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 300ms;
 }
 
-/* Transition utility for progress bars */
+/* Progress bar animation */
 .transition-width {
     transition-property: width;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
