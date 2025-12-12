@@ -16,13 +16,19 @@ const ICONS = {
     network: '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="16" y="16" width="6" height="6" rx="1"/><rect x="2" y="16" width="6" height="6" rx="1"/><rect x="9" y="2" width="6" height="6" rx="1"/><path d="M5 16v-3a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v3"/><path d="M12 12V8"/></svg>'
 };
 
+// Updated Colors to support Dark Mode (added dark: classes)
 const scheduleData = [
     {
         id: 'it-project',
         title: 'IT Project Management',
         date: 'Sunday, Dec 21',
         time: '9:00 AM - 11:00 AM',
-        colors: { bg: 'bg-blue-100', text: 'text-blue-800', border: 'border-blue-200', bar: 'bg-blue-100' },
+        colors: { 
+            bg: 'bg-blue-100 dark:bg-blue-900', 
+            text: 'text-blue-800 dark:text-blue-200', 
+            border: 'border-blue-200 dark:border-blue-800', 
+            bar: 'bg-blue-100 dark:bg-blue-700' 
+        },
         icon: ICONS.book,
         topics: [
             'The Project Management Process Group',
@@ -41,7 +47,12 @@ const scheduleData = [
         title: 'Operating Systems',
         date: 'Tuesday, Dec 23',
         time: '12:00 PM - 2:00 PM',
-        colors: { bg: 'bg-purple-100', text: 'text-purple-800', border: 'border-purple-200', bar: 'bg-purple-100' },
+        colors: { 
+            bg: 'bg-purple-100 dark:bg-purple-900', 
+            text: 'text-purple-800 dark:text-purple-200', 
+            border: 'border-purple-200 dark:border-purple-800', 
+            bar: 'bg-purple-100 dark:bg-purple-700' 
+        },
         icon: ICONS.cpu,
         topics: [
             'Topic 1&2 - Intro & Business Process Management',
@@ -62,7 +73,12 @@ const scheduleData = [
         title: 'System Analysis',
         date: 'Thursday, Dec 25',
         time: '12:00 PM - 2:00 PM',
-        colors: { bg: 'bg-emerald-100', text: 'text-emerald-800', border: 'border-emerald-200', bar: 'bg-emerald-100' },
+        colors: { 
+            bg: 'bg-emerald-100 dark:bg-emerald-900', 
+            text: 'text-emerald-800 dark:text-emerald-200', 
+            border: 'border-emerald-200 dark:border-emerald-800', 
+            bar: 'bg-emerald-100 dark:bg-emerald-700' 
+        },
         icon: ICONS.server,
         topics: [
             'Topic 4 - Analyzing the Business Case',
@@ -82,7 +98,12 @@ const scheduleData = [
         title: 'Data & Info Management',
         date: 'Thursday, Jan 1',
         time: '12:00 PM - 2:00 PM',
-        colors: { bg: 'bg-orange-100', text: 'text-orange-800', border: 'border-orange-200', bar: 'bg-orange-100' },
+        colors: { 
+            bg: 'bg-orange-100 dark:bg-orange-900', 
+            text: 'text-orange-800 dark:text-orange-200', 
+            border: 'border-orange-200 dark:border-orange-800', 
+            bar: 'bg-orange-100 dark:bg-orange-700' 
+        },
         icon: ICONS.database,
         topics: [
             'Week 2 - Data Management',
@@ -103,7 +124,12 @@ const scheduleData = [
         title: 'IT Infrastructure',
         date: 'Sunday, Jan 4',
         time: 'Time TBD',
-        colors: { bg: 'bg-indigo-100', text: 'text-indigo-800', border: 'border-indigo-200', bar: 'bg-indigo-100' },
+        colors: { 
+            bg: 'bg-indigo-100 dark:bg-indigo-900', 
+            text: 'text-indigo-800 dark:text-indigo-200', 
+            border: 'border-indigo-200 dark:border-indigo-800', 
+            bar: 'bg-indigo-100 dark:bg-indigo-700' 
+        },
         icon: ICONS.network,
         topics: [
             'Week 6 & 7 - Ch 20: Unicast Routing Protocols',
@@ -142,23 +168,23 @@ function renderSchedule() {
         const progress = calculateProgress(exam.id, exam.topics.length);
         const isDone = progress === 100;
         
-        // Create Card Element
+        // Create Card Element with Dark Mode Classes
         const card = document.createElement('div');
-        card.className = `flex flex-col h-full bg-white rounded-2xl shadow-sm border overflow-hidden transition-all hover:shadow-md ${exam.colors.border} ${isDone ? 'opacity-75' : ''}`;
+        card.className = `flex flex-col h-full bg-white dark:bg-gray-800 rounded-2xl shadow-sm border overflow-hidden transition-all hover:shadow-md ${exam.colors.border} ${isDone ? 'opacity-75' : ''}`;
         
         // Header HTML
         const headerHtml = `
-            <div class="px-6 py-5 border-b ${exam.colors.border} ${exam.colors.bg} bg-opacity-30">
+            <div class="px-6 py-5 border-b ${exam.colors.border} ${exam.colors.bg} bg-opacity-30 dark:bg-opacity-20">
                 <div class="flex justify-between items-start">
-                    <div class="p-2 rounded-lg ${exam.colors.bg} bg-opacity-100 ${exam.colors.text}">
+                    <div class="p-2 rounded-lg ${exam.colors.bg} bg-opacity-100 dark:bg-opacity-40 ${exam.colors.text}">
                         ${exam.icon}
                     </div>
-                    <span class="text-xs font-bold uppercase tracking-wider bg-white bg-opacity-60 px-2 py-1 rounded text-gray-600">
+                    <span class="text-xs font-bold uppercase tracking-wider bg-white dark:bg-gray-700 bg-opacity-60 px-2 py-1 rounded text-gray-600 dark:text-gray-300">
                         ${isDone ? 'COMPLETED' : `${progress}% Done`}
                     </span>
                 </div>
-                <h3 class="mt-4 text-xl font-bold text-gray-900 leading-tight">${exam.title}</h3>
-                <div class="mt-3 flex flex-col gap-1 text-sm font-medium opacity-80 text-gray-700">
+                <h3 class="mt-4 text-xl font-bold text-gray-900 dark:text-white leading-tight">${exam.title}</h3>
+                <div class="mt-3 flex flex-col gap-1 text-sm font-medium opacity-80 text-gray-700 dark:text-gray-300">
                     <div class="flex items-center gap-2">
                         ${ICONS.calendar}
                         ${exam.date}
@@ -173,7 +199,7 @@ function renderSchedule() {
 
         // Progress Bar HTML
         const progressBarHtml = `
-            <div class="h-1 w-full bg-gray-100">
+            <div class="h-1 w-full bg-gray-100 dark:bg-gray-700">
                 <div class="h-full transition-width ${exam.colors.bar}" style="width: ${progress}%"></div>
             </div>
         `;
@@ -181,7 +207,7 @@ function renderSchedule() {
         // Topics List HTML
         const topicsList = document.createElement('div');
         topicsList.className = 'flex-1 p-6 overflow-y-auto max-h-[400px]';
-        topicsList.innerHTML = `<h4 class="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-3">Topics to Study</h4>`;
+        topicsList.innerHTML = `<h4 class="text-xs font-semibold text-gray-400 dark:text-gray-500 uppercase tracking-wider mb-3">Topics to Study</h4>`;
         
         const ul = document.createElement('ul');
         ul.className = 'space-y-3';
@@ -189,7 +215,7 @@ function renderSchedule() {
         exam.topics.forEach((topic, idx) => {
             const isChecked = !!progressState[`${exam.id}-${idx}`];
             const li = document.createElement('li');
-            li.className = `flex items-start gap-3 cursor-pointer group select-none transition-all ${isChecked ? 'text-gray-400 line-through' : 'text-gray-700'}`;
+            li.className = `flex items-start gap-3 cursor-pointer group select-none transition-all ${isChecked ? 'text-gray-400 dark:text-gray-600 line-through' : 'text-gray-700 dark:text-gray-200'}`;
             li.onclick = () => {
                 const key = `${exam.id}-${idx}`;
                 progressState[key] = !progressState[key];
@@ -198,7 +224,7 @@ function renderSchedule() {
             };
 
             li.innerHTML = `
-                <div class="mt-0.5 flex-shrink-0 transition-colors ${isChecked ? 'text-green-500' : 'text-gray-300 group-hover:text-indigo-400'}">
+                <div class="mt-0.5 flex-shrink-0 transition-colors ${isChecked ? 'text-green-500' : 'text-gray-300 dark:text-gray-600 group-hover:text-indigo-400'}">
                     ${isChecked ? ICONS.checkCircle : ICONS.circle}
                 </div>
                 <span class="text-sm leading-snug">${topic}</span>
@@ -233,11 +259,48 @@ function updateTimer() {
     timerEl.textContent = `${days}d ${hours}h ${minutes}m until Finals`;
 }
 
+// --- Dark Mode Logic ---
+function initTheme() {
+    const toggleBtn = document.getElementById('theme-toggle');
+    const sunIcon = document.getElementById('sun-icon');
+    const moonIcon = document.getElementById('moon-icon');
+    
+    // Check Local Storage or System Preference
+    const userPref = localStorage.getItem('theme');
+    const systemPref = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    
+    if (userPref === 'dark' || (!userPref && systemPref)) {
+        document.documentElement.classList.add('dark');
+        moonIcon.classList.add('hidden');
+        sunIcon.classList.remove('hidden');
+    } else {
+        document.documentElement.classList.remove('dark');
+        moonIcon.classList.remove('hidden');
+        sunIcon.classList.add('hidden');
+    }
+
+    // Toggle Click Event
+    toggleBtn.addEventListener('click', () => {
+        document.documentElement.classList.toggle('dark');
+        
+        if (document.documentElement.classList.contains('dark')) {
+            localStorage.setItem('theme', 'dark');
+            moonIcon.classList.add('hidden');
+            sunIcon.classList.remove('hidden');
+        } else {
+            localStorage.setItem('theme', 'light');
+            moonIcon.classList.remove('hidden');
+            sunIcon.classList.add('hidden');
+        }
+    });
+}
+
 // --- Initialization ---
 document.addEventListener('DOMContentLoaded', () => {
     // Initial Render
     renderSchedule();
     updateTimer();
+    initTheme(); // Initialize Dark Mode
 
     // Start Timer Interval
     setInterval(updateTimer, 60000);
