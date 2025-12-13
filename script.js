@@ -83,6 +83,8 @@ const scheduleData = [
         },
         icon: ICONS.server,
         topics: [
+            'Topic1&2 – Intro & Business Process Management ',
+            'Topic3 – Different Approaches to System Development',
             'Topic 4 - Analyzing the Business Case',
             'Topic 5 - Data Collection Methods',
             'Topic 6 - Factors Related to Requirements',
@@ -317,3 +319,4 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
+
