@@ -18,35 +18,12 @@ const ICONS = {
 
 // Updated Colors to support Dark Mode (added dark: classes)
 const scheduleData = [
-    {
-        id: 'it-project',
-        title: 'IT Project Management',
-        date: 'Sunday, Dec 21',
-        time: '9:00 AM - 11:00 AM',
-        colors: { 
-            bg: 'bg-blue-100 dark:bg-blue-900', 
-            text: 'text-blue-800 dark:text-blue-200', 
-            border: 'border-blue-200 dark:border-blue-800', 
-            bar: 'bg-blue-100 dark:bg-blue-700' 
-        },
-        icon: ICONS.book,
-        topics: [
-            'The Project Management Process Group',
-            'Lecture 01 - Chapter 1 & 2 - Introduction',
-            'Project Scope Management',
-            'Processes',
-            'Project Time Management',
-            'Project Cost Management',
-            'Project Risk Management',
-            'Project Human Resources Management',
-            'Project Integration Management'
-        ]
-    },
+    
     {
         id: 'os',
         title: 'Operating Systems',
-        date: 'Tuesday, Dec 23',
-        time: '12:00 PM - 2:00 PM',
+        date: 'Sunday, Dec 21',
+        time: '09:00 AM - 11:00 AM',
         colors: { 
             bg: 'bg-purple-100 dark:bg-purple-900', 
             text: 'text-purple-800 dark:text-purple-200', 
@@ -66,6 +43,31 @@ const scheduleData = [
             'Main Memory',
             'Virtual Memory',
             'File System'
+        ]
+    },
+
+    {
+        id: 'it-project',
+        title: 'IT Project Management',
+        date: 'Tuesday, Dec 23',
+        time: '9:00 AM - 11:00 AM',
+        colors: { 
+            bg: 'bg-blue-100 dark:bg-blue-900', 
+            text: 'text-blue-800 dark:text-blue-200', 
+            border: 'border-blue-200 dark:border-blue-800', 
+            bar: 'bg-blue-100 dark:bg-blue-700' 
+        },
+        icon: ICONS.book,
+        topics: [
+            'The Project Management Process Group',
+            'Lecture 01 - Chapter 1 & 2 - Introduction',
+            'Project Scope Management',
+            'Processes',
+            'Project Time Management',
+            'Project Cost Management',
+            'Project Risk Management',
+            'Project Human Resources Management',
+            'Project Integration Management'
         ]
     },
     {
