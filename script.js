@@ -60,9 +60,7 @@ const scheduleData = [
         icon: ICONS.book,
         topics: [
             'The Project Management Process Group',
-            'Lecture 01 - Chapter 1 & 2 - Introduction',
             'Project Scope Management',
-            'Processes',
             'Project Time Management',
             'Project Cost Management',
             'Project Risk Management',
@@ -321,5 +319,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
+
 
 
