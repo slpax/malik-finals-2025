@@ -108,6 +108,11 @@ const scheduleData = [
         },
         icon: ICONS.database,
         topics: [
+            'Week 1 - Data Management',
+            'Week 2 - Data Management',
+            'Week 3 - Concurrency Control',
+            'Week 4 - Database Back up & Recovery',
+            'Week 2 - Data Management',
             'Week 2 - Data Management',
             'Week 6 - SQL Injection',
             'Week 7 - Need for NoSQL',
@@ -319,6 +324,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
+
 
 
 
