@@ -139,13 +139,16 @@ const scheduleData = [
         },
         icon: ICONS.network,
         topics: [
-            'Week 6 & 7 - Ch 20: Unicast Routing Protocols',
-            'Week 8 - Ch 1 & 2: Intro to Infrastructure',
-            'Week 9 - Networking',
+            'Week 6&7- Chapter 20UnicastRouting',
+            'Week 8  - Ch 1 & 2: Intro to Infrastructure',
+            'Week 9  - Networking',
             'Week 10 - Ch 11: Core Computing',
             'Week 11 - Ch 06: System Performance Concepts',
             'Week 12 - Organizing Storage',
             'Week 13 - The Role of IT'
+            'Week 14 - Cloud and Grid Computing'
+            'Week 14 - Ensuring Business Continuity'
+            'Week 15 - Infrastructure lifecycle'
         ]
     }
 ];
@@ -324,6 +327,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
+
 
 
 
