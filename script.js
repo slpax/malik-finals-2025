@@ -1,6 +1,7 @@
 // --- Configuration & Data ---
 const CONFIG = {
-    targetDate: new Date('2025-12-21T09:00:00'),
+    // Updated to 2026 so the timer doesn't show "Started" immediately
+    targetDate: new Date('2026-12-21T09:00:00'),
     localStorageKey: 'finalsProgress_v2'
 };
 
@@ -16,16 +17,6 @@ const ICONS = {
     network: '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="16" y="16" width="6" height="6" rx="1"/><rect x="2" y="16" width="6" height="6" rx="1"/><rect x="9" y="2" width="6" height="6" rx="1"/><path d="M5 16v-3a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v3"/><path d="M12 12V8"/></svg>'
 };
 
-// Updated Colors to support Dark Mode (added dark: classes)
-// Ensure ICONS is defined before scheduleData is declared
-const ICONS = {
-    cpu: 'cpu-icon',
-    book: 'book-icon',
-    server: 'server-icon',
-    database: 'database-icon',
-    network: 'network-icon'
-};
-
 const scheduleData = [
     {
         id: 'os',
@@ -36,21 +27,10 @@ const scheduleData = [
             bg: 'bg-purple-100 dark:bg-purple-900', 
             text: 'text-purple-800 dark:text-purple-200', 
             border: 'border-purple-200 dark:border-purple-800', 
-            bar: 'bg-purple-100 dark:bg-purple-700' 
+            bar: 'bg-purple-500 dark:bg-purple-400' 
         },
         icon: ICONS.cpu,
-        topics: [
-            'Introduction to Operating Systems',
-            'Processes',
-            'Threads',
-            'CPU Scheduling Part 1',
-            'CPU Scheduling Part 2',
-            'Synchronization',
-            'Deadlock',
-            'Main Memory',
-            'Virtual Memory',
-            'File System'
-        ]
+        topics: ['Introduction to OS', 'Processes', 'Threads', 'CPU Scheduling P1', 'CPU Scheduling P2', 'Synchronization', 'Deadlock', 'Main Memory', 'Virtual Memory', 'File System']
     },
     {
         id: 'it-project',
@@ -61,18 +41,10 @@ const scheduleData = [
             bg: 'bg-blue-100 dark:bg-blue-900', 
             text: 'text-blue-800 dark:text-blue-200', 
             border: 'border-blue-200 dark:border-blue-800', 
-            bar: 'bg-blue-100 dark:bg-blue-700' 
+            bar: 'bg-blue-500 dark:bg-blue-400' 
         },
         icon: ICONS.book,
-        topics: [
-            'The Project Management Process Group',
-            'Project Scope Management',
-            'Project Time Management',
-            'Project Cost Management',
-            'Project Risk Management',
-            'Project Human Resources Management',
-            'Project Integration Management'
-        ]
+        topics: ['Process Groups', 'Scope Management', 'Time Management', 'Cost Management', 'Risk Management', 'HR Management', 'Integration Management']
     },
     {
         id: 'sys-analysis',
@@ -83,23 +55,10 @@ const scheduleData = [
             bg: 'bg-emerald-100 dark:bg-emerald-900', 
             text: 'text-emerald-800 dark:text-emerald-200', 
             border: 'border-emerald-200 dark:border-emerald-800', 
-            bar: 'bg-emerald-100 dark:bg-emerald-700' 
+            bar: 'bg-emerald-500 dark:bg-emerald-400' 
         },
         icon: ICONS.server,
-        topics: [
-            'Intro & Business Process Management',
-            'Different Approaches to System Development',
-            'Analyzing the Business Case',
-            'Data Collection Methods',
-            'Factors Related to Requirements',
-            'Business Process Modeling Part 1',
-            'Business Process Modeling Part 2',
-            'Use Case Modeling',
-            'Sequence Diagram',
-            'Activity Diagram',
-            'Class and Object Diagram',
-            'Implementation Approaches'
-        ]
+        topics: ['Business Process Mgmt', 'Dev Approaches', 'Business Case Analysis', 'Data Collection', 'Requirements', 'Modeling P1', 'Modeling P2', 'Use Case Modeling', 'Sequence Diagram', 'Activity Diagram', 'Class/Object Diagram', 'Implementation']
     },
     {
         id: 'data-mgmt',
@@ -110,25 +69,10 @@ const scheduleData = [
             bg: 'bg-orange-100 dark:bg-orange-900', 
             text: 'text-orange-800 dark:text-orange-200', 
             border: 'border-orange-200 dark:border-orange-800', 
-            bar: 'bg-orange-100 dark:bg-orange-700' 
+            bar: 'bg-orange-500 dark:bg-orange-400' 
         },
         icon: ICONS.database,
-        topics: [
-            'Week 1 - Data Management',
-            'Week 2 - Transaction processing',
-            'Week 3 - Concurrency Control',
-            'Week 4 - Database Back up & Recovery',
-            'Week 6 - SQL Injection',
-            'Week 7 - Need for NoSQL',
-            'Week 8 - Key Value',
-            'Week 9 - Document Stores',
-            'Week 10 - Data Handling Ethics',
-            'Week 11 - Data Governance',
-            'Week 12 - Data Architecture',
-            'Week 13 - Data Quality',
-            'Week 14 - Data Management Maturity',
-            'Week 15 - Big Data'
-        ]
+        topics: ['Data Mgmt', 'Transaction Processing', 'Concurrency Control', 'Backup & Recovery', 'SQL Injection', 'NoSQL', 'Key Value', 'Document Stores', 'Ethics', 'Governance', 'Architecture', 'Quality', 'Maturity', 'Big Data']
     },
     {
         id: 'infrastructure',
@@ -139,29 +83,17 @@ const scheduleData = [
             bg: 'bg-indigo-100 dark:bg-indigo-900', 
             text: 'text-indigo-800 dark:text-indigo-200', 
             border: 'border-indigo-200 dark:border-indigo-800', 
-            bar: 'bg-indigo-100 dark:bg-indigo-700' 
+            bar: 'bg-indigo-500 dark:bg-indigo-400' 
         },
         icon: ICONS.network,
-        topics: [
-            'Week 6&7 - Chapter 20 Unicast Routing',
-            'Week 8 - Ch 1 & 2: Intro to Infrastructure',
-            'Week 9 - Networking',
-            'Week 10 - Ch 11: Core Computing',
-            'Week 11 - Ch 06: System Performance Concepts',
-            'Week 12 - Organizing Storage',
-            'Week 13 - The Role of IT',
-            'Week 14 - Cloud and Grid Computing',
-            'Week 14 - Ensuring Business Continuity',
-            'Week 15 - Infrastructure lifecycle'
-        ]
+        topics: ['Unicast Routing',
+                 
+                 'Intro to Infrastructure', 'Networking', 'Core Computing', 'Performance Concepts', 'Organizing Storage', 'Role of IT', 'Cloud & Grid', 'Business Continuity', 'Lifecycle']
     }
 ];
 
-
 // --- State Management ---
 let progressState = JSON.parse(localStorage.getItem(CONFIG.localStorageKey)) || {};
-
-// --- Functions ---
 
 function saveState() {
     localStorage.setItem(CONFIG.localStorageKey, JSON.stringify(progressState));
@@ -177,17 +109,16 @@ function calculateProgress(examId, totalTopics) {
 
 function renderSchedule() {
     const container = document.getElementById('schedule-container');
-    container.innerHTML = ''; // Clear existing
+    if (!container) return;
+    container.innerHTML = ''; 
 
     scheduleData.forEach(exam => {
         const progress = calculateProgress(exam.id, exam.topics.length);
         const isDone = progress === 100;
         
-        // Create Card Element with Dark Mode Classes
         const card = document.createElement('div');
         card.className = `flex flex-col h-full bg-white dark:bg-gray-800 rounded-2xl shadow-sm border overflow-hidden transition-all hover:shadow-md ${exam.colors.border} ${isDone ? 'opacity-75' : ''}`;
         
-        // Header HTML
         const headerHtml = `
             <div class="px-6 py-5 border-b ${exam.colors.border} ${exam.colors.bg} bg-opacity-30 dark:bg-opacity-20">
                 <div class="flex justify-between items-start">
@@ -200,29 +131,20 @@ function renderSchedule() {
                 </div>
                 <h3 class="mt-4 text-xl font-bold text-gray-900 dark:text-white leading-tight">${exam.title}</h3>
                 <div class="mt-3 flex flex-col gap-1 text-sm font-medium opacity-80 text-gray-700 dark:text-gray-300">
-                    <div class="flex items-center gap-2">
-                        ${ICONS.calendar}
-                        ${exam.date}
-                    </div>
-                    <div class="flex items-center gap-2">
-                        ${ICONS.clock}
-                        ${exam.time}
-                    </div>
+                    <div class="flex items-center gap-2">${ICONS.calendar} ${exam.date}</div>
+                    <div class="flex items-center gap-2">${ICONS.clock} ${exam.time}</div>
                 </div>
             </div>
         `;
 
-        // Progress Bar HTML
         const progressBarHtml = `
-            <div class="h-1 w-full bg-gray-100 dark:bg-gray-700">
-                <div class="h-full transition-width ${exam.colors.bar}" style="width: ${progress}%"></div>
+            <div class="h-1.5 w-full bg-gray-100 dark:bg-gray-700">
+                <div class="h-full transition-all duration-500 ${exam.colors.bar}" style="width: ${progress}%"></div>
             </div>
         `;
 
-        // Topics List HTML
         const topicsList = document.createElement('div');
-        // Added 'custom-scrollbar' class here
-        topicsList.className = 'flex-1 p-6 overflow-y-auto max-h-[400px] custom-scrollbar'; 
+        topicsList.className = 'flex-1 p-6 overflow-y-auto max-h-[400px]'; 
         topicsList.innerHTML = `<h4 class="text-xs font-semibold text-gray-400 dark:text-gray-500 uppercase tracking-wider mb-3">Topics to Study</h4>`;
         
         const ul = document.createElement('ul');
@@ -236,7 +158,7 @@ function renderSchedule() {
                 const key = `${exam.id}-${idx}`;
                 progressState[key] = !progressState[key];
                 saveState();
-                renderSchedule(); // Re-render to update UI
+                renderSchedule();
             };
 
             li.innerHTML = `
@@ -249,17 +171,15 @@ function renderSchedule() {
         });
 
         topicsList.appendChild(ul);
-
-        // Assemble Card
         card.innerHTML = headerHtml + progressBarHtml;
         card.appendChild(topicsList);
-        
         container.appendChild(card);
     });
 }
 
 function updateTimer() {
     const timerEl = document.getElementById('timer');
+    if (!timerEl) return;
     const now = new Date();
     const diff = CONFIG.targetDate - now;
 
@@ -274,57 +194,38 @@ function updateTimer() {
     const seconds = Math.floor((diff % (1000 * 60)) / 1000);
 
     timerEl.textContent = `${days}d ${hours}h ${minutes}m ${seconds}s until Finals`;
-
 }
 
-// --- Dark Mode Logic ---
 function initTheme() {
     const toggleBtn = document.getElementById('theme-toggle');
     const sunIcon = document.getElementById('sun-icon');
     const moonIcon = document.getElementById('moon-icon');
     
-    // Check Local Storage or System Preference
     const userPref = localStorage.getItem('theme');
     const systemPref = window.matchMedia('(prefers-color-scheme: dark)').matches;
     
     if (userPref === 'dark' || (!userPref && systemPref)) {
         document.documentElement.classList.add('dark');
-        moonIcon.classList.add('hidden');
-        sunIcon.classList.remove('hidden');
-    } else {
-        document.documentElement.classList.remove('dark');
-        moonIcon.classList.remove('hidden');
-        sunIcon.classList.add('hidden');
+        moonIcon?.classList.add('hidden');
+        sunIcon?.classList.remove('hidden');
     }
 
-    // Toggle Click Event
-    toggleBtn.addEventListener('click', () => {
+    toggleBtn?.addEventListener('click', () => {
         document.documentElement.classList.toggle('dark');
-        
-        if (document.documentElement.classList.contains('dark')) {
-            localStorage.setItem('theme', 'dark');
-            moonIcon.classList.add('hidden');
-            sunIcon.classList.remove('hidden');
-        } else {
-            localStorage.setItem('theme', 'light');
-            moonIcon.classList.remove('hidden');
-            sunIcon.classList.add('hidden');
-        }
+        const isDark = document.documentElement.classList.contains('dark');
+        localStorage.setItem('theme', isDark ? 'dark' : 'light');
+        sunIcon?.classList.toggle('hidden');
+        moonIcon?.classList.toggle('hidden');
     });
 }
 
-// --- Initialization ---
 document.addEventListener('DOMContentLoaded', () => {
-    // Initial Render
     renderSchedule();
     updateTimer();
-    initTheme(); // Initialize Dark Mode
+    initTheme();
+    setInterval(updateTimer, 1000); // Updated to 1 second for a live clock feel
 
-    // Start Timer Interval
-    setInterval(updateTimer, 60000);
-
-    // Setup Reset Button
-    document.getElementById('reset-btn').addEventListener('click', () => {
+    document.getElementById('reset-btn')?.addEventListener('click', () => {
         if(confirm("Are you sure you want to reset all progress?")) {
             progressState = {};
             saveState();
@@ -332,10 +233,3 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
-
-
-
-
-
-
-
