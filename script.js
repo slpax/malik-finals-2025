@@ -17,8 +17,16 @@ const ICONS = {
 };
 
 // Updated Colors to support Dark Mode (added dark: classes)
+// Ensure ICONS is defined before scheduleData is declared
+const ICONS = {
+    cpu: 'cpu-icon',
+    book: 'book-icon',
+    server: 'server-icon',
+    database: 'database-icon',
+    network: 'network-icon'
+};
+
 const scheduleData = [
-    
     {
         id: 'os',
         title: 'Operating Systems',
@@ -32,8 +40,7 @@ const scheduleData = [
         },
         icon: ICONS.cpu,
         topics: [
-            'Topic 1&2 - Intro & Business Process Management',
-            'Topic 3 - Different Approaches to System Development',
+            'Introduction to Operating Systems',
             'Processes',
             'Threads',
             'CPU Scheduling Part 1',
@@ -45,7 +52,6 @@ const scheduleData = [
             'File System'
         ]
     },
-
     {
         id: 'it-project',
         title: 'IT Project Management',
@@ -81,18 +87,18 @@ const scheduleData = [
         },
         icon: ICONS.server,
         topics: [
-            'Topic1&2 – Intro & Business Process Management ',
-            'Topic3 – Different Approaches to System Development',
-            'Topic 4 - Analyzing the Business Case',
-            'Topic 5 - Data Collection Methods',
-            'Topic 6 - Factors Related to Requirements',
-            'Topic 7 - Business Process Modeling Part 1',
-            'Topic 7 - Business Process Modeling Part 2',
-            'Topic 8 - Use Case Modeling',
-            'Topic 9 - Sequence Diagram',
-            'Topic 10 - Activity Diagram',
-            'Topic 11 - Class and Object Diagram',
-            'Topic 12 - Implementation Approaches'
+            'Intro & Business Process Management',
+            'Different Approaches to System Development',
+            'Analyzing the Business Case',
+            'Data Collection Methods',
+            'Factors Related to Requirements',
+            'Business Process Modeling Part 1',
+            'Business Process Modeling Part 2',
+            'Use Case Modeling',
+            'Sequence Diagram',
+            'Activity Diagram',
+            'Class and Object Diagram',
+            'Implementation Approaches'
         ]
     },
     {
@@ -112,8 +118,6 @@ const scheduleData = [
             'Week 2 - Transaction processing',
             'Week 3 - Concurrency Control',
             'Week 4 - Database Back up & Recovery',
-            'Week 2 - Data Management',
-            'Week 2 - Data Management',
             'Week 6 - SQL Injection',
             'Week 7 - Need for NoSQL',
             'Week 8 - Key Value',
@@ -139,19 +143,20 @@ const scheduleData = [
         },
         icon: ICONS.network,
         topics: [
-            'Week 6&7- Chapter 20UnicastRouting',
-            'Week 8  - Ch 1 & 2: Intro to Infrastructure',
-            'Week 9  - Networking',
+            'Week 6&7 - Chapter 20 Unicast Routing',
+            'Week 8 - Ch 1 & 2: Intro to Infrastructure',
+            'Week 9 - Networking',
             'Week 10 - Ch 11: Core Computing',
             'Week 11 - Ch 06: System Performance Concepts',
             'Week 12 - Organizing Storage',
-            'Week 13 - The Role of IT'
-            'Week 14 - Cloud and Grid Computing'
-            'Week 14 - Ensuring Business Continuity'
+            'Week 13 - The Role of IT',
+            'Week 14 - Cloud and Grid Computing',
+            'Week 14 - Ensuring Business Continuity',
             'Week 15 - Infrastructure lifecycle'
         ]
     }
 ];
+
 
 // --- State Management ---
 let progressState = JSON.parse(localStorage.getItem(CONFIG.localStorageKey)) || {};
@@ -327,6 +332,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
+
 
 
 
